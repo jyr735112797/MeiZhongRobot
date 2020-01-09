@@ -1,0 +1,53 @@
+cartographer_ros:
+谷歌cartographer_slam，进行地图构建。包机型含cartographer_ros、cartographer_ros_msgs、cartographer_rviz,主要启动文件为cartographer_ros下的hokuyo_revo_lds.launch
+执行命令：roslaunch cartographer_ros  hokuyo_revo_lds.launch
+
+distance：
+启动引导程序，主要文件jyrrrrr.cpp  主要节点jyr
+执行命令：rosrun distance jyr
+
+imu_com:
+主要启动节点imu_com，文件imu.cpp。imu usb直连工控机读取数据，发布sensor_msgs::Imu类型数据
+执行命令：rosrun imu_com imu_com
+
+joystick_drivers:
+手柄驱动
+执行命令：rosrun joy joy_node
+
+jyr：
+机器人功能启动文件。
+启动手柄：roslaunch jyr meizhong_joystick_teleop.launch
+启动雷达：roslaunch jyr jyr_hokuyo.launch
+启动导航：roslaunch jyr turtlebot3_navigation.launch
+引导:rosrun jyr talker.py
+采用laser数据模拟odom发布：roslaunch jyr jyr_laser_odom.launch
+
+
+mzl_urdf_single：
+机器人rivz模型启动
+执行命令：roslaunch mzl_urdf_single display.launch
+
+navigation & nav_test & openslam_slam & rbx1 & slam_gmaping & turtlebot & turtlebot_apps:
+为官方功能包，未作修改
+
+startup：
+机器人功能启动包。未使用。
+
+xqserial_server:
+机器人底盘通讯包，数据传输
+命令执行：roslaunch xqserial_server xqserial.launch
+---------------------------------------------------------------------
+机器人操作流程（可修改相应启动文件配置参数）：
+1.启动底盘：roslaunch xqserial_server xqserial.launch
+2.启动雷达：roslaunch jyr jyr_hokuyo.launch
+  启动手柄遥控：roslaunch jyr meizhong_joystick_teleop.launch
+  启动rviz可视模型：roslaunch mzl_urdf_single display.launch
+  ！上述三个文件合并在jyr_start_teleop.launch
+3.地图构建：（使用手柄遥控机器人移动至室内各个地方）
+  roslaunch cartographer_ros  hokuyo_revo_lds.launch
+  地图保存：rosrun map_server map_saver -f map_name   (一般存放至jyr目录下的maps中)
+4.自主导航：
+  roslaunch jyr turtlebot3_navigation.launch
+5.引导：
+  开启人脸距离监听：rosrun jyr talker.py
+  修改distance/jyrrrr.cpp中目标点位置，开始引导：rosrun distance jyr

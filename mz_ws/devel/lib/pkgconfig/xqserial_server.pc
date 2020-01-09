@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/mz_ws/devel
+
+Name: xqserial_server
+Description: Description of xqserial_server
+Version: 1.0.1
+Cflags: -I/home/ubuntu/mz_ws/src/xqserial_server/include
+Libs: -L/home/ubuntu/mz_ws/devel/lib 
+Requires: nav_msgs roscpp rospy sensor_msgs std_msgs geometry_msgs

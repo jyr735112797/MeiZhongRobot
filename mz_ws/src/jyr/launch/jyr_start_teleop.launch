@@ -1,0 +1,9 @@
+<launch>
+
+  <include file="$(find mzl_urdf_single)/launch/display.launch" />
+  
+   <include file="$(find jyr)/launch/meizhong_joystick_teleop.launch" />
+
+ <include file="$(find jyr)/launch/jyr_hokuyo.launch" />
+ 
+</launch>

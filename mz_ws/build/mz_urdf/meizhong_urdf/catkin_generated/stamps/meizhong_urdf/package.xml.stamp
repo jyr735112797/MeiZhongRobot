@@ -1,0 +1,18 @@
+<package>
+  <name>meizhong_urdf</name>
+  <version>1.0.0</version>
+<description>guide_all_urdf</description>
+  <author>me</author>
+  
+<maintainer email="jyr@todo.todo">jyr</maintainer>
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roslaunch</build_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>rviz</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>gazebo</run_depend>
+  <export>
+    <architecture_independent />
+  </export>
+</package>

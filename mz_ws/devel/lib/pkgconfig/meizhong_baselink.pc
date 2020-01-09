@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/mz_ws/devel
+
+Name: meizhong_baselink
+Description: Description of meizhong_baselink
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/ubuntu/mz_ws/devel/lib 
+Requires: 

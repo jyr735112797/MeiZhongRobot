@@ -1,0 +1,7 @@
+<launch>
+  <include file="$(find jyr)/launch/hector_mapping.launch"/>
+
+  <include file="$(find jyr)/launch/jyr_meizhong_move_base.launch"/>
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser"  args="0.0 0.0 0.0 0 0.0 0.0 base_link laser 40" />
+<node pkg="tf" type="static_transform_publisher" name="base_link_to_scanmatcher_frame"  args="0.0 0.0 0.0 0 0.0 0.0 scanmatcher_frame base_link 40" />
+</launch>

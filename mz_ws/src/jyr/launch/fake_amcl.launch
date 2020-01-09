@@ -1,0 +1,31 @@
+<launch>
+
+  <param name="use_sim_time" value="false" />
+
+  <!-- Set the name of the map yaml file: can be overridden on the command line. -->
+  <!--arg name="map" default="test_map.yaml" /-->
+
+  <!-- Run the map server with the desired map -->
+ 
+
+  <arg name="map" default="2018.4.11-5.yaml"/>
+
+  <!-- Run the map server with the desired map -->
+  <node name="map_server" pkg="map_server" type="map_server" args="/home/jyr/maps/$(arg map)"/>
+
+
+  <!-- The move_base node -->
+  <include file="$(find rbx1_nav)/launch/fake_move_base_amcl.launch" />
+  
+   <node pkg="tf" type="static_transform_publisher" name="odom_map_broadcaster" args="0 0 0 0 0 0 /map /odom 100" />
+  <node pkg="tf" type="static_transform_publisher" name="laserlink_broadcaster" args="-0.25 0 0.3 3.1415926 0 0  base_link  laser 100"/>
+  <!-- Run fake localization compatible with AMCL output -->
+  <!--node pkg="fake_localization" type="fake_localization" name="fake_localization" clear_params="true" output="screen">
+     <remap from="base_pose_ground_truth" to="odom" />
+     <param name="global_frame_id" value="map" />
+     <param name="base_frame_id" value="base_footprint" />
+  </node-->
+<!-- Fire up AMCL -->
+  <include file="$(find rbx1_nav)/launch/tb_amcl.launch" />
+
+</launch>

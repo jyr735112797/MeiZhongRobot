@@ -1,0 +1,5 @@
+<launch>
+    
+    <node pkg="distance" type="publisher" name="slam_gmapping" output="screen"/>
+    
+</launch>

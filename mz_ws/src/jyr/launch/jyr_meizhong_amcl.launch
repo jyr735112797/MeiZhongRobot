@@ -1,0 +1,31 @@
+<launch>
+
+  <param name="use_sim_time" value="false" />
+  
+ 
+ <!-- The move_base node -->
+  <include file="$(find nav_test)/launch/fake_move_base.launch" />
+  
+<!--include file="$(find jyr)/launch/jyr_meizhong_move_base.launch" /-->
+  
+<!--include file="$(find jyr)/launch/xiaoqiang_move_base.launch" /-->
+
+  <!--include file="$(find jyr)/launch/fake_move_base.launch" /-->
+  <!-- Run fake localization compatible with AMCL output -->
+  <!--node pkg="fake_localization" type="fake_localization" name="fake_localization" output="screen" /-->
+  
+
+<arg name="map" default="1128.yaml" />
+  <node name="map_server" pkg="map_server" type="map_server" args="/home/jyr/maps/$(arg map)"/>
+
+<!--2018-12-26-9.yaml-->
+<include file="$(find jyr)/launch/jyr_meizhong_a2_amcl.launch" />
+<!--include file="$(find jyr)/launch/jyr_meizhong_a2_amcl_omni.launch" /-->
+
+ <!--include file="$(find jyr)/launch/xiaoqiang_a2_amcl.launch" /-->
+
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" 
+    args="0.3 0.0 0.12 0 0.0 0.0 base_link laser 40" />
+
+
+</launch>

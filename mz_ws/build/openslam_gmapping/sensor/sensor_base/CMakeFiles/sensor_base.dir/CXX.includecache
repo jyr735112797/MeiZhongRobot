@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ubuntu/mz_ws/src/openslam_gmapping/include/gmapping/sensor/sensor_base/sensor.h
+string
+-
+map
+-
+
+/home/ubuntu/mz_ws/src/openslam_gmapping/include/gmapping/sensor/sensor_base/sensorreading.h
+sensor.h
+/home/ubuntu/mz_ws/src/openslam_gmapping/include/gmapping/sensor/sensor_base/sensor.h
+
+/home/ubuntu/mz_ws/src/openslam_gmapping/sensor/sensor_base/sensor.cpp
+gmapping/sensor/sensor_base/sensor.h
+-
+
+/home/ubuntu/mz_ws/src/openslam_gmapping/sensor/sensor_base/sensorreading.cpp
+gmapping/sensor/sensor_base/sensorreading.h
+-
+

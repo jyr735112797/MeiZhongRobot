@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/mz_ws/install
+
+Name: macar_new
+Description: Description of macar_new
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/ubuntu/mz_ws/install/lib 
+Requires: 

@@ -1,0 +1,30 @@
+<?xml version="1.0"?> 
+<launch> 
+<!-- Run the map server --> 
+<arg name="map" default="2018-12-16-5.yaml" />
+  <node name="map_server" pkg="map_server" type="map_server" args="/home/jyr/maps/$(arg map)"/>
+
+
+<include file="$(find amcl)/examples/amcl_diff.launch" > 
+
+</include> 
+
+<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen"> 
+<param name="controller_frequency" value="10.0"/> 
+<param name="controller_patiente" value="15.0"/> 
+
+<rosparam file="$(find nav_test)/config/xiaoqiang/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+<rosparam file="$(find nav_test)/config/xiaoqiang/costmap_common_params.yaml" command="load" ns="local_costmap" /> 
+<rosparam file="$(find nav_test)/config/xiaoqiang/local_costmap_params.yaml" command="load" /> 
+<rosparam file="$(find nav_test)/config/xiaoqiang/global_costmap_params.yaml" command="load" /> 
+<rosparam file="$(find nav_test)/config/xiaoqiang/base_local_planner_params.yaml" command="load" /> 
+</node> 
+
+<node pkg="tf" type="static_transform_publisher" name="laserlink_broadcaster" args="-0.25 0 0.3 3.1415926 0 0  map  base_footprint 100"/>
+
+</launch>
+
+
+
+
+

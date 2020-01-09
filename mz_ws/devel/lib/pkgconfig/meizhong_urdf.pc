@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/mz_ws/devel
+
+Name: meizhong_urdf
+Description: Description of meizhong_urdf
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/ubuntu/mz_ws/devel/lib 
+Requires: 

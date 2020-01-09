@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/mz_ws/install
+
+Name: model1126
+Description: Description of model1126
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/ubuntu/mz_ws/install/lib 
+Requires: 

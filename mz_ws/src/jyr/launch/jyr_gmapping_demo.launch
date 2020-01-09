@@ -1,0 +1,6 @@
+<launch>
+  <include file="$(find jyr)/launch/jyr_gmapping.launch"/>
+
+  <include file="$(find jyr)/launch/jyr_move_base.launch"/>
+
+</launch>

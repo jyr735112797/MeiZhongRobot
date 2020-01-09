@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/mz_ws/install
+
+Name: imu_com
+Description: Description of imu_com
+Version: 0.0.0
+Cflags: -I/home/ubuntu/mz_ws/install/include
+Libs: -L/home/ubuntu/mz_ws/install/lib 
+Requires: roscpp rospy serial std_msgs geometry_msgs

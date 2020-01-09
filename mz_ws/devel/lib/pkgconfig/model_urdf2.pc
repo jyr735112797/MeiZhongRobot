@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/mz_ws/devel
+
+Name: model_urdf2
+Description: Description of model_urdf2
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/ubuntu/mz_ws/devel/lib 
+Requires: 

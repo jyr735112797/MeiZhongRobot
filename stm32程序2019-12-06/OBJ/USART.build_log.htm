@@ -1,0 +1,104 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.14.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: pan pan, 微软中国, LIC=65IVE-54WEQ-Y8IFK-ZXNB2-49UMY-HFGVC
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Standard  Version: 5.14.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 update 1 (build 106)
+Assembler:       Armasm.exe V5.05 update 1 (build 106)
+Linker/Locator:  ArmLink.exe V5.05 update 1 (build 106)
+Library Manager: ArmAr.exe V5.05 update 1 (build 106)
+Hex Converter:   FromElf.exe V5.05 update 1 (build 106)
+CPU DLL:         SARMCM3.DLL V5.14.0.0
+Dialog DLL:      DCM.DLL V1.13.1.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.14.0_KEIL
+Dialog DLL:      TCM.DLL V1.14.4.0
+ 
+<h2>Project:</h2>
+C:\Users\admin\Desktop\串口可调速&速度反馈&外部IMU麦克纳姆里程计2019-7-28\USER\USART.uvprojx
+Project File Date:  11/28/2019
+
+<h2>Output:</h2>
+Rebuild target 'USART'
+compiling main.c...
+..\HARDWARE\IMU\imu.h(18): warning:  #1295-D: Deprecated declaration z_zero - give arg types
+        void z_zero( );
+main.c(404): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+                if(z_yaw<0)z_yaw=360.0+z_yaw;
+main.c(28): warning:  #550-D: variable "len" was set but never used
+        u8 len; 
+main.c(29): warning:  #177-D: variable "times" was declared but never referenced
+        u16 times=0; 
+main.c(30): warning:  #177-D: variable "range" was declared but never referenced
+        u16 range;
+main.c(40): warning:  #177-D: variable "encorder_left_old" was declared but never referenced
+        int encorder_left_old=0,encorder_right_old=0;
+main.c(40): warning:  #177-D: variable "encorder_right_old" was declared but never referenced
+        int encorder_left_old=0,encorder_right_old=0;
+main.c(41): warning:  #177-D: variable "encorder_delta_left" was declared but never referenced
+        int encorder_delta_left=0,encorder_delta_right=0;    //电机编码器增量
+main.c(41): warning:  #177-D: variable "encorder_delta_right" was declared but never referenced
+        int encorder_delta_left=0,encorder_delta_right=0;    //电机编码器增量
+main.c(42): warning:  #177-D: variable "encorder_delta_car" was declared but never referenced
+        int encorder_delta_car=0;
+main.c(44): warning:  #177-D: variable "theta" was declared but never referenced
+        float theta=0.0;         //方位角
+main.c(49): warning:  #550-D: variable "x_magnetic" was set but never used
+        float x_angular_velocity,y_angular_velocity,z_angular_velocity,x_linear_acceleration,y_linear_acceleration,z_linear_acceleration,x_magnetic,y_magnetic,z_magnetic,x_pitch,y_roll,z_yaw;
+main.c(49): warning:  #550-D: variable "y_magnetic" was set but never used
+        float x_angular_velocity,y_angular_velocity,z_angular_velocity,x_linear_acceleration,y_linear_acceleration,z_linear_acceleration,x_magnetic,y_magnetic,z_magnetic,x_pitch,y_roll,z_yaw;
+main.c(49): warning:  #550-D: variable "z_magnetic" was set but never used
+        float x_angular_velocity,y_angular_velocity,z_angular_velocity,x_linear_acceleration,y_linear_acceleration,z_linear_acceleration,x_magnetic,y_magnetic,z_magnetic,x_pitch,y_roll,z_yaw;
+main.c: 14 warnings, 0 errors
+compiling stm32f4xx_it.c...
+compiling system_stm32f4xx.c...
+compiling led.c...
+compiling beep.c...
+compiling key.c...
+compiling motor.c...
+compiling timer.c...
+compiling myiic.c...
+compiling mpu6050.c...
+compiling inv_mpu.c...
+compiling inv_mpu_dmp_motion_driver.c...
+compiling ks103.c...
+compiling imu.c...
+..\HARDWARE\IMU\imu.h(18): warning:  #1295-D: Deprecated declaration z_zero - give arg types
+        void z_zero( );
+..\HARDWARE\IMU\imu.c(43): warning:  #940-D: missing return statement at end of non-void function "IMU_Get_Data"
+  }
+..\HARDWARE\IMU\imu.c(11): warning:  #550-D: variable "len" was set but never used
+        u8 len,t;       
+..\HARDWARE\IMU\imu.c(11): warning:  #177-D: variable "t" was declared but never referenced
+        u8 len,t;       
+..\HARDWARE\IMU\imu.c: 4 warnings, 0 errors
+compiling delay.c...
+compiling sys.c...
+compiling usart.c...
+assembling startup_stm32f40_41xxx.s...
+compiling misc.c...
+compiling stm32f4xx_gpio.c...
+compiling stm32f4xx_rcc.c...
+compiling stm32f4xx_syscfg.c...
+compiling stm32f4xx_usart.c...
+compiling stm32f4xx_tim.c...
+compiling stm32f4xx_fsmc.c...
+linking...
+Program Size: Code=15220 RO-data=584 RW-data=52 ZI-data=7636  
+FromELF: creating hex file...
+"..\OBJ\USART.axf" - 0 Error(s), 18 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  C:\Users\admin\Desktop\串口可调速&速度反馈&外部IMU麦克纳姆里程计2019-7-28\USER\RTE
+  C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0
+
+<h2>Collection of Component Files used:</h2>
+</pre>
+</body>
+</html>
